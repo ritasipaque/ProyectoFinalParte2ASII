@@ -1,5 +1,9 @@
+
+
 <?php
 
+
+include("controladores/cabecera.php");
 //Recibir datos del formulario Agendar Cita 
 
 include("con_db.php");

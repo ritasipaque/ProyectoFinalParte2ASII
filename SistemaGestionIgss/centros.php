@@ -24,13 +24,13 @@
 
 
 
-    <center><h1>Contancia Vacunacion</h1></center>
+    <center><h1>Cetros de vacunacion </h1></center>
 
-    <form method="POST" action="ConstanciaVac.php" >
+    <form method="POST" action="centros.php" >
 
     <div class="form-group">
-      <label for="dpi">Consulte su contancia de vacunacion</label>
-      <input type="text" name="dpi" class="form-control" id="dpi">
+      <label for="zona">Consulta tu centro mas cercano </label>
+      <input type="text" name="zona" class="form-control" id="zona">
   </div>
 
   
@@ -63,34 +63,35 @@
       include("abrir_conexion.php");
       
 
-        $doc = $_POST['dpi'];
+        $doc = $_POST['zona'];
         if($doc=="") //VERIFICO QUE AGREGEN UN DOCUMENTO OBLIGATORIAMENTE.
-          {echo "Digita un dpi/afilicaion (Ej: 4015369900101)";}
+          {echo "Digita una zona. (Ej: zona6)";}
         else
         {  
-          $resultados = mysqli_query($conexion,"SELECT * FROM $tabla_db1 WHERE dpi = $doc");
+          $resultados = mysqli_query($conexion,"SELECT * FROM $tabla_db1 WHERE zona = $doc");
           while($consulta = mysqli_fetch_array($resultados))
           {
             echo 
             "
               <table width=\"140%\" border=\"1\">
                 <tr>
-                  <td><b><center>Nombre</center></b></td>
-                  <td><b><center>Dosis</center></b></td>
+                  <td><b><center>ID</center></b></td>
+                  <td><b><center>NOMBRE</center></b></td>
+                  <td><b><center>Zona</center></b></td>
                   <td><b><center>Vacuna</center></b></td>
-                  <td><b><center>Fech.Vacunacion</center></b></td>
-                  <td><b><center>Lote</center></b></td>
-                  <td><b><center>Centro</center></b></td>
-                  <td><b><center>Pais</center></b></td>
+                  
+                  <td><b><center>DOSIS</center></b></td>
+                  <td><b><center>HORARIO</center></b></td>
+                  <td><b><center>DIA</center></b></td>
                 </tr>
                 <tr>
+                  <td>".$consulta['id']."</td>
                   <td>".$consulta['nombre']."</td>
-                  <td>".$consulta['dosis']."</td>
+                  <td>".$consulta['zona']."</td>
                   <td>".$consulta['vacuna']."</td>
-                  <td>".$consulta['fecha_vacunacion']."</td>
-                  <td>".$consulta['lote']."</td>
-                  <td>".$consulta['centro']."</td>
-                  <td>".$consulta['pais']."</td>
+                  <td>".$consulta['dosis']."</td>
+                  <td>".$consulta['horario']."</td>
+                  <td>".$consulta['dia']."</td>
                 </tr>
               </table>
             ";
@@ -122,10 +123,7 @@
       <nav class="navbar navbar-expand-lg bg-primary"">
     <ul class="nav navbar-nav">
     
-        <li class="nav-item">
-            
-            <a class="tex-center" href="pdf/gpdf.php"><h2>GENERAR PDF</h2></a>
-        </li>
+       
 
         <li class="nav-item">
             

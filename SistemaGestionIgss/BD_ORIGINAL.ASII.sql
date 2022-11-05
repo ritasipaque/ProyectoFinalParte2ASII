@@ -25,9 +25,12 @@ PRIMARY KEY (`id`)
 CREATE TABLE `centros` (
 `id` int NOT NULL AUTO_INCREMENT,
 `nombre` varchar(45) DEFAULT NULL,
-`direccion`  varchar(45) DEFAULT NULL,
-`telefono`  varchar(45) DEFAULT NULL,
+`zona`  varchar(45) DEFAULT NULL,
+`vacuna`  varchar(45) DEFAULT NULL,
+`dosis`  varchar(45) DEFAULT NULL,
 `horario`  varchar(45) DEFAULT NULL,
+`dia`  varchar(45) DEFAULT NULL,
+
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
 
@@ -80,4 +83,10 @@ INSERT INTO `bd_vacunacion`.`proceso_vacunacion` (`dpi`, `nombre`, `departamento
 
 INSERT INTO `bd_vacunacion`.`proceso_vacunacion` (`dpi`, `nombre`, `departamento`, `dosis`, `vacuna`, `fecha_vacunacion`, `lote`, `centro`, `codigo_proceso`, `fecha_nacimiento`, `pais`) VALUES ('1620630101', 'Victor Roman', 'Guatemala', '3', 'pfizer', '2021-01-15', 'ZXC102', 'Miraflores', '3006', '1990-12-12', 'Guatemala');
 
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('camip pamplona', 'zona12', 'spunik', '1-2-3', '8:00-3:00PM', 'L a V');
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('guardia de honor', '10', 'spunik', '1-2-3', '8:00 a 5:00pm', 'L a V');
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('umg', 'zona2', 'moderna', '1-2', '8:00 a 4:00 pm', 'L a S');
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('portales', 'zona17', 'spunik', '1-2', '9:00 a 5:00pm', 'L a D');
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('mriaflores', 'zona10', 'pfizer', '1-2-3', '9:00 a 5:00 pm', 'L a D');
+INSERT INTO `bd_vacunacion`.`centros` (`nombre`, `zona`, `vacuna`, `dosis`, `horario`, `dia`) VALUES ('usac', 'zona12', 'moderna', '1-2-3', '9:00 a 6:00pm', 'L a V');
 

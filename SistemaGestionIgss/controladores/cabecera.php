@@ -22,7 +22,7 @@
 
 
         <li class="nav-item">
-            <a class="tex-center" href="#"><h5>CENTROS</h5></a>
+            <a class="tex-center" href="centros.php"><h5>CENTROS</h5></a>
         </li>
         <li class="nav-item">
             <a class="tex-center" href="AS2Proyecto/index.php"><h5>AGENDAR CITA</h5></a>
